@@ -1,1 +1,1 @@
-# kidneystructureanalysis
+# Kidney Structural Analysis Pipeline
