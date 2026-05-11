@@ -1,6 +1,6 @@
 # Renal Damage Diagnosis (RDDx)
 
-- **RDDx is a high-throughput, modular computational pipeline for instance segmentation, phenotypic classification, and spatial analysis of kidney parenchymal structures in whole-slide multiplexed fluorescence images.**
+**RDDx is a high-throughput, modular computational pipeline for instance segmentation, phenotypic classification, and spatial analysis of kidney parenchymal structures in whole-slide multiplexed fluorescence images.**
 
 ---
 
@@ -269,9 +269,9 @@ Please refer to `LICENSE` for terms of use.
 
 These studies were funded by the NIH Autoimmunity Centers of Excellence (AI082724), Department of Defense (LRI180083), Alliance for Lupus Research, Chan Zuckerberg Biohub, and NIH awards (S10-OD025081, S10-RR021039, and P30-CA14599). Imaging was performed at the University of Chicago Human Disease and Immune Discovery Core. Computational analyses were performed on the MEL computational server in the Radiomics and Machine Learning Facility at the University of Chicago.
 
-The core segmentation models of RDDx are built upon the [Omnipose](https://omnipose.readthedocs.io/index.html) paper by Cutler et al. who introduced a high-precision morphology-independent solution for bacterial cell segmentation. Please visit [Omnipose paper](https://www.nature.com/articles/s41592-022-01639-4).
+The core segmentation models of RDDx are built upon the [Omnipose](https://omnipose.readthedocs.io/index.html) paper by Cutler et al. who introduced a high-precision morphology-independent solution for bacterial cell segmentation. Please visit [Omnipose paper](https://www.nature.com/articles/s41592-022-01639-4). RDDx uses code licensed under the MIT License from [Omnipose] (https://github.com/kevinjohncutler/omnipose).
 ---
 
 ## Contact
 
-For questions, please open a GitHub issue or contact the corresponding author at mclark@uchicago.edu.
+For questions, please open a GitHub issue or contact the corresponding author, Marcus Clark, at mclark@uchicago.edu.
