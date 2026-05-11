@@ -1,0 +1,378 @@
+# requirements.txt — converted from linux_requirements.yml (conda environment: omnipose)
+# Python 3.10.12
+# CUDA 11.8 (pytorch-cuda=11.8 in original conda env)
+# System-level C libraries (libgcc, libstdcxx, CUDA runtime, Qt binaries, etc.)
+# must still be installed via conda or the system package manager and are not listed here.
+
+# -----------------------------------------------------------------------
+# Core scientific computing
+# -----------------------------------------------------------------------
+numpy==1.26.0
+scipy==1.11.3
+pandas==2.1.1
+numexpr==2.10.1
+bottleneck==1.4.2
+sympy==1.11.1
+mpmath==1.3.0
+networkx==3.1
+pyarrow==16.1.0
+
+# -----------------------------------------------------------------------
+# Deep learning — PyTorch (CUDA 11.8 build)
+# -----------------------------------------------------------------------
+torch==2.0.1
+torchvision==0.16.0
+triton==2.0.0
+torch-optimizer==0.3.0
+torchvf==0.1.3
+pytorch-ranger==0.1.1
+
+# -----------------------------------------------------------------------
+# NVIDIA CUDA Python bindings (CUDA 11.x)
+# -----------------------------------------------------------------------
+nvidia-cublas-cu11==11.10.3.66
+nvidia-cuda-cupti-cu11==11.7.101
+nvidia-cuda-nvrtc-cu11==11.7.99
+nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cudnn-cu11==8.5.0.96
+nvidia-cufft-cu11==10.9.0.58
+nvidia-curand-cu11==10.2.10.91
+nvidia-cusolver-cu11==11.4.0.1
+nvidia-cusparse-cu11==11.7.4.91
+nvidia-nccl-cu11==2.14.3
+nvidia-nvtx-cu11==11.7.91
+
+# -----------------------------------------------------------------------
+# JIT compilation
+# -----------------------------------------------------------------------
+numba==0.58.1
+llvmlite==0.41.1
+lit==17.0.3
+
+# -----------------------------------------------------------------------
+# Image processing
+# -----------------------------------------------------------------------
+Pillow==10.0.1
+scikit-image==0.22.0
+opencv-python-headless==4.8.1.78
+imageio==2.31.5
+imagecodecs==2023.9.18
+tifffile==2023.2.28
+pywavelets==1.4.1
+mahotas==1.4.13
+aicsimageio==4.14.0
+
+# -----------------------------------------------------------------------
+# Segmentation / Omnipose-specific
+# -----------------------------------------------------------------------
+omnipose-theme==1.1.2
+edt==2.3.1
+fastremap==1.14.0
+ncolor==1.2.1
+mgen==1.2.1
+colour==0.1.5
+peakdetect==1.2
+hausdorff==0.2.6
+
+# -----------------------------------------------------------------------
+# Machine learning utilities
+# -----------------------------------------------------------------------
+scikit-learn==1.3.1
+joblib==1.3.2
+threadpoolctl==3.2.0
+miseval==1.2.2
+
+# -----------------------------------------------------------------------
+# Data wrangling and parallel computing
+# -----------------------------------------------------------------------
+dask==2024.8.2
+dask-expr==1.1.13
+distributed==2024.8.2
+cloudpickle==3.0.0
+dill==0.3.7
+cytoolz==0.12.2
+toolz==1.0.0
+partd==1.4.2
+locket==1.0.0
+sortedcontainers==2.4.0
+HeapDict==1.0.1
+zict==3.0.0
+tblib==1.7.0
+fsspec==2023.6.0
+
+# -----------------------------------------------------------------------
+# Array / storage formats
+# -----------------------------------------------------------------------
+zarr==2.15.0
+numcodecs==0.13.1
+xarray==2025.1.1
+lz4==4.3.2
+msgpack==1.0.3
+resource-backed-dask-array==0.1.0
+
+# -----------------------------------------------------------------------
+# OME / microscopy formats
+# -----------------------------------------------------------------------
+ome-types==0.5.3
+ome-zarr==0.10.3
+xmlschema==3.4.3
+xsdata==24.3.1
+elementpath==4.7.0
+
+# -----------------------------------------------------------------------
+# Visualization
+# -----------------------------------------------------------------------
+matplotlib==3.8.0
+contourpy==1.1.1
+cycler==0.12.1
+kiwisolver==1.4.5
+fonttools==4.43.1
+bokeh==3.6.0
+xyzservices==2022.9.0
+pyqtgraph==0.13.3
+superqt==0.6.1
+darkdetect==0.8.0
+
+# -----------------------------------------------------------------------
+# Networking and graph analysis
+# -----------------------------------------------------------------------
+networkit==11.0
+igraph==0.11.2
+Rtree==1.0.1
+intervaltree==3.1.0
+dictances==1.5.6
+
+# -----------------------------------------------------------------------
+# HTTP, authentication, and cloud storage
+# -----------------------------------------------------------------------
+requests==2.31.0
+urllib3==1.26.16
+certifi==2024.8.30
+idna==3.4
+charset-normalizer==2.0.4
+chardet==4.0.0
+cryptography==41.0.3
+cffi==1.15.1
+pycparser==2.21
+pyopenssl==23.2.0
+pysocks==1.7.1
+brotlipy==0.7.0
+s3fs==2023.6.0
+aiobotocore==2.5.4
+botocore==1.31.17
+aiohttp==3.11.11
+aioitertools==0.12.0
+aiohappyeyeballs==2.4.4
+aiosignal==1.3.2
+async-timeout==5.0.1
+frozenlist==1.5.0
+multidict==6.1.0
+yarl==1.18.3
+propcache==0.2.1
+jmespath==1.0.1
+
+# -----------------------------------------------------------------------
+# Google Cloud storage
+# -----------------------------------------------------------------------
+google-api-core==2.12.0
+google-auth==2.23.3
+google-cloud-core==2.3.3
+google-cloud-storage==2.12.0
+google-crc32c==1.5.0
+google-resumable-media==2.6.0
+googleapis-common-protos==1.61.0
+protobuf==4.24.4
+pyasn1==0.5.0
+pyasn1-modules==0.3.0
+rsa==4.9
+cachetools==5.3.1
+
+# -----------------------------------------------------------------------
+# Jupyter / IPython
+# -----------------------------------------------------------------------
+ipython==8.21.0
+ipykernel==6.25.0
+jupyter_client==7.4.9
+jupyter_core==5.3.0
+jupyterlab_pygments==0.1.2
+nbclient==0.5.13
+nbconvert==6.5.4
+nbformat==5.9.2
+comm==0.1.2
+debugpy==1.6.7
+nest-asyncio==1.5.6
+pyzmq==25.1.0
+tornado==6.3.3
+traitlets==5.7.1
+matplotlib-inline==0.1.6
+backcall==0.2.0
+decorator==5.1.1
+pickleshare==0.7.5
+prompt-toolkit==3.0.43
+pygments==2.16.1
+wcwidth==0.2.5
+stack_data==0.2.0
+asttokens==2.0.5
+executing==0.8.3
+pure_eval==0.2.2
+pexpect==4.8.0
+ptyprocess==0.7.0
+
+# -----------------------------------------------------------------------
+# Qt / GUI bindings
+# -----------------------------------------------------------------------
+pyqt5-sip==12.11.0
+pyqt6==6.5.3
+pyqt6-qt6==6.5.3
+pyqt6-sip==13.6.0
+qtpy==2.4.0
+qtawesome==1.2.2
+qtconsole==5.3.2
+qdarkstyle==3.0.2
+qstylizer==0.2.2
+spyder-kernels==2.5.0
+support-developer==1.0.5
+
+# -----------------------------------------------------------------------
+# Pydantic / data validation
+# -----------------------------------------------------------------------
+pydantic==2.10.5
+pydantic-compat==0.1.2
+pydantic-core==2.27.2
+annotated-types==0.7.0
+typing-extensions==4.12.2
+
+# -----------------------------------------------------------------------
+# General utilities
+# -----------------------------------------------------------------------
+click==8.1.7
+colorama==0.4.6
+psutil==5.9.0
+filelock==3.9.0
+platformdirs==3.10.0
+packaging==24.2
+six==1.16.0
+attrs==23.1.0
+wrapt==1.14.1
+pluggy==1.0.0
+exceptiongroup==1.0.4
+pyrsistent==0.18.0
+jsonschema==4.17.3
+python-fastjsonschema==2.16.2
+bleach==4.1.0
+webencodings==0.5.1
+defusedxml==0.7.1
+tinycss2==1.2.1
+pandocfilters==1.5.0
+mistune==0.8.4
+entrypoints==0.4
+lxml==4.9.3
+soupsieve==2.5
+beautifulsoup4==4.12.2
+arrow==1.2.3
+python-dateutil==2.8.2
+pytz==2023.3.post1
+python-tzdata==2023.3
+ujson==5.4.0
+natsort==8.4.0
+fasteners==0.19
+watchdog==2.1.6
+pbr==5.11.1
+inflection==0.5.1
+unidecode==1.2.0
+text-unidecode==1.3
+python-slugify==5.0.2
+jellyfish==1.0.1
+textdistance==4.2.1
+three-merge==0.1.1
+whatthepatch==1.0.2
+diff-match-patch==20200713
+more-itertools==8.12.0
+atomicwrites==1.4.0
+importlib-metadata==6.0.0
+zipp==3.11.0
+lazy-loader==0.3
+lazy-object-proxy==1.6.0
+asciitree==0.3.3
+
+# -----------------------------------------------------------------------
+# Template / project scaffolding
+# -----------------------------------------------------------------------
+cookiecutter==1.7.3
+binaryornot==0.4.4
+Jinja2==3.1.2
+jinja2-time==0.2.0
+MarkupSafe==2.1.1
+poyo==0.5.0
+
+# -----------------------------------------------------------------------
+# System / OS integration (Linux)
+# -----------------------------------------------------------------------
+secretstorage==3.3.1
+jeepney==0.7.1
+keyring==23.13.1
+pyxdg==0.27
+wurlitzer==3.0.2
+
+# -----------------------------------------------------------------------
+# Development tools (linting, formatting, language server)
+# -----------------------------------------------------------------------
+black==23.3.0
+autopep8==1.6.0
+flake8==4.0.1
+pycodestyle==2.8.0
+pyflakes==2.4.0
+mccabe==0.7.0
+pylint==2.16.2
+pylint-venv==2.3.0
+astroid==2.14.2
+isort==5.9.3
+yapf==0.31.0
+rope==1.7.0
+python-lsp-server==1.5.0
+python-lsp-black==1.2.1
+python-lsp-jsonrpc==1.0.0
+pyls-spyder==0.4.0
+docstring-to-markdown==0.11
+numpydoc==1.5.0
+pydocstyle==6.3.0
+pytoolconfig==1.2.5
+toml==0.10.2
+tomli==2.0.1
+tomlkit==0.11.1
+pathspec==0.10.3
+mypy_extensions==1.0.0
+parso==0.8.3
+jedi==0.18.1
+ply==3.11
+
+# -----------------------------------------------------------------------
+# Documentation
+# -----------------------------------------------------------------------
+sphinx==5.0.2
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.5
+alabaster==0.7.12
+babel==2.11.0
+imagesize==1.4.1
+snowballstemmer==2.2.0
+docutils==0.18.1
+
+# -----------------------------------------------------------------------
+# Build / packaging tools
+# -----------------------------------------------------------------------
+setuptools==68.0.0
+wheel==0.41.2
+cmake==3.27.7
+
+# -----------------------------------------------------------------------
+# Miscellaneous
+# -----------------------------------------------------------------------
+jaraco.classes==3.2.1
+python-lmdb==1.4.1
+texttable==1.7.0
+gmpy2==2.1.2
