@@ -144,7 +144,7 @@ from rddx import segment_structures
 # For glomeruli: channels = [CD10, CD31, Claudin1, DAPI]
 
 masks = segment_structures(
-    image_path="path/to/normalized_image.npy",
+    image_path="path/to/normalized_image.tif",
     structure="tubules",          # options: "tubules", "capillaries", "glomeruli"
     model_dir="models/",
     use_gpu=True
@@ -172,16 +172,50 @@ To train a new model on custom annotated data, place training tiles and ground-t
 ```
 data/
   train/
-    images/        # multichannel input tiles (.tif or .npy)
-    masks/         # instance segmentation ground truth
+    image1.tif                # 16-bit input tiles (.tif)
+    image1_masks.tif          # 16-bit binary segmentation ground truth tiles (.tif) where background pixel = 0, foreground pixel = 1
+    image2.tif
+    image2_masks.tif
   test/
-    images/
-    masks/
+    wholeslide1.tif           # 16-bit whole-slide images (.tif)
+    wholeslide2.tif
+```
+### Training your own network
+
+The command template used for the core RDDx networks is:
+
+```bash
+omnipose --train --use_gpu \
+  --dir /data/train/ \
+  --mask_filter _masks \
+  --n_epochs 1000 \
+  --pretrained_model None \
+  --learning_rate 0.01 \
+  --diameter 0 \
+  --batch_size 16 \
+  --RAdam \
+  --all_channels \
+  --nclasses 2 \
+  --tyx 128,128
 ```
 
-Training and validation instances should be selected to include balanced representation from normal and diseased tissue to avoid disease-specific bias. Two or more expert annotators are recommended for ground-truth generation.
+**Advanced parameters and hyperparameters**
 
-Launch training using the provided configuration:
+| Parameter | Description |
+|---|---|
+| `--pretrained_model` | Path to a saved model weight file for transfer learning. The input dimensionality and data type of the pretrained model must match those of the current training run. |
+| `--n_epochs` | Number of training epochs. One epoch is one complete pass through the full training dataset. Higher epoch counts capture more complex data patterns, but excessive values risk overfitting to low-information noise. A starting value of 100 is recommended; training accuracy and loss curves should be monitored to determine whether additional epochs are warranted. |
+| `--learning_rate` | Step size used by the optimizer to minimize the loss function. Values that are too large can overshoot the optimal solution and cause training instability; values that are too small slow convergence. For fluorescence images, a range of 0.0001–0.001 is recommended. |
+| `--batch_size` | Number of image tiles the network processes per optimization step. |
+| `--RAdam` | Selects the RAdam optimizer. If omitted, the network defaults to SGD. |
+| `--diameter` | Rescaling factor applied to the training input. `--diameter 0` disables rescaling and trains at the native input resolution. `--diameter x` rescales the input relative to a reference mean diameter of 30 pixels. |
+| `--tyx` | Spatial crop size drawn from each training image per batch. This controls the dimensions of the warped image crops shown to the network during training. A value in the range of 0.5–0.8× the training image dimensions is recommended. For example, the core RDDx tubule network uses 160×160 input tiles with `--tyx 128,128`. |
+| `--nchan` | Number of input channels. Passing `--all_channels` trains the network on all available channels in the input tiles. |
+| `--nclasses` | Number of output prediction classes. `--nclasses 2` produces flow and distance field predictions. `--nclasses 3` adds a boundary field prediction as a third output. |
+
+Training and validation instances should be selected to include balanced representation from normal and diseased tissue to avoid disease-specific bias. 
+Ground-truth annotation by two or more expert annotators is recommended.
+Launch training using the example configuration:
 
 ```python
 from rddx import train_model
